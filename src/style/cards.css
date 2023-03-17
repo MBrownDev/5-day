@@ -1,0 +1,66 @@
+.holder {
+    margin-top: 10px;
+    position: relative;
+    transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+    gap: 65px;
+    align-items: center;
+    justify-content: center;
+}
+
+.top-container {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+
+.box {
+    height: 300px;
+    min-width: 200px;
+    border-radius: 10px;
+    transition: 0.5s;
+    transition-property: height;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 2);
+}
+
+.text {
+    font-size: 25px;
+    color: #666;
+    font-family: 'Open Sans', Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.weather h2 {
+    font-size: 30px;
+    color: #666;
+    font-family: 'Open Sans', Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.weather {
+    width: 200px;
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.box h1:hover {
+    color: #161919;
+}
+
+.box input {
+    width: 1px;
+    height: 1px;
+    align-items: center;
+    justify-content: flex-start;
+    opacity: 0;
+}
+
+.box input:checked {
+    height: 400px;
+}

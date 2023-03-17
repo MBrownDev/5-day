@@ -1,0 +1,69 @@
+.graph-container {
+    height: 50vh;
+    width: fit-content;
+    display: flex;
+    border: 3px;
+}
+
+.card {
+    height: fit-content;
+    width: 25vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.weather {
+    width: 200px;
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+}
+
+div h1{
+    font-size: 55px;
+    color: #666;
+    font-family: 'Open Sans', Verdana, Geneva, Tahoma, sans-serif;
+}
+
+div h2 {
+    font-size: 20px;
+    color: #666;
+    font-family: 'Open Sans', Verdana, Geneva, Tahoma, sans-serif;
+}
+
+div h3 {
+    margin: 0 auto;
+    color: #666;
+    font-family: 'Open Sans', Verdana, Geneva, Tahoma, sans-serif;;
+}
+
+div p {
+    color: #666;
+    font-family: 'Open Sans', Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.conditions {
+    display: flex;
+    flex-direction: column;
+}
+
+.graph {
+    height: 50vh;
+    width: 75vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.chart {
+    height: 50%;
+    width: 100%;
+}
+
+.condition-card {
+    height: 50vh;
+    width: 75vw;
+    display: flex;
+    flex-direction: row;
+}
