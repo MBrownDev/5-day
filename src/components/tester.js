@@ -14,16 +14,20 @@ const Tester = (props) => {
         }
     };
     useEffect(() => {
+        fetchData();
+    },[props])
+
+    async function fetchData() {
         fetch('https://weatherapi-com.p.rapidapi.com/forecast.json?q=chicago&days=3', options)
             .then(response => response.json())
             .then(response => {
                 console.log(response, 'stop 1')
                 getDays(response)
-                console.log(days, 'stop 2')
+                //console.log(days, 'stop 2')
             })
             .catch(err => console.error(err));
             changeForecast();
-    },[props])
+    }
 
     function changeForecast(){
         console.log(days, 'stop 3')
@@ -31,9 +35,6 @@ const Tester = (props) => {
             throw new Error('Loading...')
         }else{
             getForcast(days.forecast.forecastday)
-            //console.log(date.getDay('2023-03-06'))
-            //console.log(response)
-            //console.log(forecast)
         }
     }
 
@@ -61,6 +62,7 @@ const Tester = (props) => {
     return (
         <div className="top-container">
             {forecast.map((e, index) => {
+                console.log(days,'days')
                 const date = new Date(e.date+', 0:00:00');
                 return(
                 <div key={index} className='box' onClick={() => passData(index)}>

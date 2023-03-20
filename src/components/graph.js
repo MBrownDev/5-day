@@ -68,7 +68,7 @@ const Graph = ({weather, index}) => {
 
                 <div className="graph">
                     <Chart data={days} index={index} />
-                    <Hourly hours={days}/>
+                    <Hourly hours={days} index={index}/>
                 </div>
             </div>
         )
@@ -98,7 +98,7 @@ const Graph = ({weather, index}) => {
 
                 <div className="graph">
                     <Chart data={weather} index={index} />
-                    <Hourly hours={days}/>
+                    <Hourly hours={days} index={index}/>
                 </div>
             </div>
         )

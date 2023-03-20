@@ -1,12 +1,15 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import '../style/cards.css';
 
-const Hourly = ({hours}) => {
+const Hourly = ({hours, index}) => {
 
-    const [hour, getHour] = useState(hours.forecast.forecastday[0])
+    const [hour, getHour] = useState(hours.forecast.forecastday[index])
     const time = [hour.hour[9], hour.hour[12], hour.hour[15], hour.hour[18],hour.hour[21]]
     
-    console.log(time, 'time')
+    useEffect(() => {
+        getHour(hours.forecast.forecastday[index])
+    },[hours, index])
+    console.log(hour, 'time', index)
     return(
         <div className="condition-card">
             {time.map((e,index) => 
