@@ -13,30 +13,34 @@ const Tester = (props) => {
             'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
         }
     };
+    const [option, getOptions] = useState(options)
+
     useEffect(() => {
-        fetchData();
-    },[props])
-
-    async function fetchData() {
-        fetch('https://weatherapi-com.p.rapidapi.com/forecast.json?q=chicago&days=3', options)
-            .then(response => response.json())
-            .then(response => {
-                console.log(response, 'stop 1')
-                getDays(response)
-                //console.log(days, 'stop 2')
-            })
-            .catch(err => console.error(err));
-            changeForecast();
-    }
-
-    function changeForecast(){
-        console.log(days, 'stop 3')
-        if(days === undefined){
-            throw new Error('Loading...')
-        }else{
-            getForcast(days.forecast.forecastday)
+        async function fetchData() {
+            fetch('https://weatherapi-com.p.rapidapi.com/forecast.json?q=chicago&days=3', option)
+                .then(response => response.json())
+                .then(response => {
+                    console.log(response, 'stop 1')
+                    getDays(response)
+                    //console.log(days, 'stop 2')
+                })
+                .catch(err => console.error(err));
+                function changeForecast(){
+                    console.log(days, 'stop 3')
+                    if(days === undefined){
+                        throw new Error('Loading...')
+                    }else{
+                        getForcast(days.forecast.forecastday)
+                    }
+                }
+                changeForecast();
         }
-    }
+        fetchData();
+    },[days, option])
+
+    
+
+    
 
     const passData = (data) => {
         console.log(data, 'test')
